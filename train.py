@@ -26,4 +26,5 @@ model.fit(X_train, y_train)
 os.makedirs("outputs", exist_ok=True)
 joblib.dump(model, "outputs/model.pkl")
 
+#Finally
 print("Model training completed and saved")

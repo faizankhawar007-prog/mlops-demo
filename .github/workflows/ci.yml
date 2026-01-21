@@ -19,6 +19,13 @@ jobs:
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
+    - name: Set Azure ML defaults
+      run: |
+        az configure --defaults \
+          workspace=faizankhawar \
+          group=ml-resource-azure \
+          location=eastus2
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:

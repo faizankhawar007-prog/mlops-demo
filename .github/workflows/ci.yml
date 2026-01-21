@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 permissions:
-  id-token: write   # Required for OIDC federated identity
+  id-token: write   # Required for federated identity
   contents: read
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
         client-id: ${{ secrets.AZURE_CLIENT_ID }}
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        auth-type: 'OIDC'   # Use federated identity instead of client secret
+        auth-type: 'IDENTITY'   # Correct value for federated identity login
 
     - name: Set Azure ML defaults
       run: |
